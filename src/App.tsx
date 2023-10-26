@@ -2,12 +2,48 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { SimplyDonut } from "./lib/simply-donut/SimplyDonut";
+import { TDonutData } from "./lib/simply-donut/types";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  const data: TDonutData[] = [
+    {
+      color: "red",
+      value: 234,
+      name: "premier",
+    },
+    {
+      color: "green",
+      value: 334,
+      name: "second",
+    },
+    {
+      color: "blue",
+      value: 123,
+      name: "troisième",
+    },
+    {
+      color: "pink",
+      value: 341,
+      name: "quatrième",
+    },
+    {
+      color: "orange",
+      value: 543,
+      name: "cinquième",
+    },
+    {
+      color: "brown",
+      value: 199,
+      name: "dernier",
+    },
+  ];
+
   return (
     <>
+      <SimplyDonut donutData={data} />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

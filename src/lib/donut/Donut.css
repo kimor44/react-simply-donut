@@ -1,0 +1,14 @@
+.simply-donut {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  position: relative;
+  border-radius: 50%;
+}
+.simply-donut::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  background-color: #fff;
+  border-radius: 50%;
+}
