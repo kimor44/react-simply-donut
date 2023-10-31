@@ -1,4 +1,3 @@
-import React from "react";
 import { TDonut } from "./types";
 import "./Donut.css";
 
