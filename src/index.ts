@@ -1,5 +1,5 @@
 import "./style.css";
 
-import { SimplyDonut } from "./lib/simply-donut";
+import { SimplyDonut } from "./donuts/simply-donut";
 
 export { SimplyDonut };
