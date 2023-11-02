@@ -9,10 +9,14 @@ export default defineConfig({
   plugins: [react(), dts({ insertTypesEntry: true }), libInjectCss()],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: {
+        donuts: resolve(__dirname, "src/donuts"),
+        "": resolve(__dirname, "src/index.ts"),
+      },
       name: "react-simply-donut",
-      formats: ["es", "umd"],
-      fileName: (format) => `react-simply-donut.${format}.js`,
+      formats: ["es", "cjs"],
+      fileName: (format, entryName) =>
+        `${entryName ? entryName + "/" : ""}react-simply-donut.${format}.js`,
     },
     copyPublicDir: false,
     rollupOptions: {

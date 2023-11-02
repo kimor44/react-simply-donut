@@ -6,14 +6,18 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/react-simply-donut.umd.js",
-  "source": "src/index.ts",
+  "main": "./dist/react-simply-donut.cjs.js",
   "typings": "./dist/index.d.ts",
   "module": "./dist/react-simply-donut.es.js",
   "exports": {
+    "./donuts": {
+      "import": "./dist/donuts/react-simply-donut.es.js",
+      "require": "./dist/donuts/react-simply-donut.cjs.js",
+      "types": "./dist/donuts/index.d.ts"
+    },
     ".": {
       "import": "./dist/react-simply-donut.es.js",
-      "require": "./dist/react-simply-donut.umd.js",
+      "require": "./dist/react-simply-donut.cjs.js",
       "types": "./dist/index.d.ts"
     },
     "./dist/style.css": {
