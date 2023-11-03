@@ -1,0 +1,25 @@
+:root {
+  --lg-donut: 250px;
+  --md-donut: 200px;
+  --sm-donut: 150px;
+}
+
+section.simply-donut-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+section.sm-donut {
+  width: var(--sm-donut);
+  height: var(--sm-donut);
+}
+
+section.md-donut {
+  width: var(--md-donut);
+  height: var(--md-donut);
+}
+
+section.lg-donut {
+  width: var(--lg-donut);
+  height: var(--lg-donut);
+}

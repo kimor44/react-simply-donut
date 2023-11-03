@@ -5,7 +5,8 @@ export type TDonutData = {
 };
 
 export type TSimplyDonut = {
-  donutData: TDonutData[];
+  data: TDonutData[];
+  size?: "sm" | "md" | "lg";
 };
 
 export type TDataForDonut = {

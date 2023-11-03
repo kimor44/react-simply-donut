@@ -7,9 +7,11 @@ import {
   INITIAL_DEGREE,
 } from "./types";
 import { Donut } from "../donut/Donut";
+import { clsx } from "clsx";
+import "./SimplyDonut.css";
 
-const calculateTheTotalValue = (donutData: TDonutData[]): number => {
-  const donutsData: TDonutData[] = [...donutData];
+const calculateTheTotalValue = (data: TDonutData[]): number => {
+  const donutsData: TDonutData[] = [...data];
 
   return donutsData.reduce((total, donut) => total + donut.value, 0);
 };
@@ -64,13 +66,23 @@ const formatingDonutData = (donutData: TDonutData[]): string => {
   return convertDegreesForDonutDataToString(degreesForDonut);
 };
 
-const SimplyDonut: React.FC<TSimplyDonut> = ({ donutData }: TSimplyDonut) => {
-  const convertedDonutDataToStringDegrees = formatingDonutData(donutData);
+const SimplyDonut: React.FC<TSimplyDonut> = ({ data, size }: TSimplyDonut) => {
+  const convertedDonutDataToStringDegrees = formatingDonutData(data);
   const backgroundStyles = {
     background: `conic-gradient(${convertedDonutDataToStringDegrees})`,
   };
+  const donutWrapperStyles = clsx({
+    ["sm-donut"]: size === "sm",
+    ["md-donut"]: size === "md",
+    ["lg-donut"]: size === "lg",
+    ["simply-donut-wrapper"]: true,
+  });
 
-  return <Donut backgroundProperties={backgroundStyles} />;
+  return (
+    <section className={donutWrapperStyles}>
+      <Donut backgroundProperties={backgroundStyles} />
+    </section>
+  );
 };
 
 export { SimplyDonut };
