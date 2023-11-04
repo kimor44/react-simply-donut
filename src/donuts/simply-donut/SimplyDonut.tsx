@@ -6,8 +6,13 @@ import {
   TOTAL_PERCENTAGE,
   INITIAL_DEGREE,
   COLORS,
+  DEFAULT_INSET_COLOR,
+  DEFAULT_INSET_SIZE,
+  MINIMAL_INSET,
+  MAXIMAL_INSET,
 } from "./types";
 import { Donut } from "../donut/Donut";
+import { TDonut } from "../donut/types";
 import { clsx } from "clsx";
 import "./SimplyDonut.css";
 
@@ -84,7 +89,40 @@ const formatingDonutData = (donutData: TDonutData[]): string => {
   return convertDegreesForDonutDataToString(degreesForDonut);
 };
 
-const SimplyDonut: React.FC<TSimplyDonut> = ({ data, size }: TSimplyDonut) => {
+const isValidSize = (size: number): boolean => {
+  return size >= MINIMAL_INSET && size <= MAXIMAL_INSET;
+};
+
+const setInsetSize = (size: number): string => {
+  if (isValidSize(size)) {
+    return `${size}%`;
+  }
+
+  return DEFAULT_INSET_SIZE;
+};
+
+const setInsetColor = (color: string): string => {
+  if (isHexaFormat(color)) {
+    return color;
+  }
+
+  return DEFAULT_INSET_COLOR;
+};
+
+const getInsetProps = (inset: TSimplyDonut["inset"]): TDonut["inset"] => {
+  const size =
+    inset && inset.size ? setInsetSize(inset.size) : DEFAULT_INSET_SIZE;
+  const color =
+    inset && inset.color ? setInsetColor(inset.color) : DEFAULT_INSET_COLOR;
+
+  return { "--inset-color": color, "--inset-size": size };
+};
+
+const SimplyDonut: React.FC<TSimplyDonut> = ({
+  data,
+  size,
+  inset,
+}: TSimplyDonut) => {
   const convertedDonutDataToStringDegrees = formatingDonutData(data);
   const backgroundStyles = {
     background: `conic-gradient(${convertedDonutDataToStringDegrees})`,
@@ -96,9 +134,11 @@ const SimplyDonut: React.FC<TSimplyDonut> = ({ data, size }: TSimplyDonut) => {
     ["simply-donut-wrapper"]: true,
   });
 
+  const insetProps = getInsetProps(inset);
+
   return (
     <section className={donutWrapperStyles}>
-      <Donut backgroundProperties={backgroundStyles} />
+      <Donut background={backgroundStyles} inset={insetProps} />
     </section>
   );
 };

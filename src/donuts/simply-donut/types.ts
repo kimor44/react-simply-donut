@@ -7,6 +7,10 @@ export type TDonutData = {
 export type TSimplyDonut = {
   data: TDonutData[];
   size?: "sm" | "md" | "lg";
+  inset?: {
+    color?: string;
+    size?: number;
+  };
 };
 
 export type TDataForDonut = {
@@ -33,3 +37,7 @@ export const COLORS: string[] = [
   "#7433FF",
   "#B533FF",
 ];
+export const DEFAULT_INSET_SIZE = "12%";
+export const DEFAULT_INSET_COLOR = "#cbd5e1";
+export const MINIMAL_INSET = 5;
+export const MAXIMAL_INSET = 45;

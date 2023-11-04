@@ -7,7 +7,7 @@
 .simply-donut::before {
   content: "";
   position: absolute;
-  inset: 12%;
-  background-color: #fff;
+  inset: var(--inset-size);
+  background-color: var(--inset-color);
   border-radius: 50%;
 }
