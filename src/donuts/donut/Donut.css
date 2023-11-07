@@ -1,8 +1,12 @@
+:root {
+  --donut-border: solid 1px #f8fafc;
+}
 .simply-donut {
   width: 100%;
   height: 100%;
   position: relative;
   border-radius: 50%;
+  border: var(--donut-border);
 }
 .simply-donut::before {
   content: "";
@@ -10,4 +14,5 @@
   inset: var(--inset-size);
   background-color: var(--inset-color);
   border-radius: 50%;
+  border: var(--donut-border);
 }

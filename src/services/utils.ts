@@ -10,9 +10,6 @@ export const sortData = (
   data: TDonutData[],
   order: "asc" | "desc" = "asc"
 ): TDonutData[] => {
-  console.log("🚀 ------------------------------------🚀");
-  console.log("🚀 ~ file: utils.ts:13 ~ data:", { data, order });
-  console.log("🚀 ------------------------------------🚀");
   if (order === "asc") {
     data.sort((a: TDonutData, b: TDonutData) => a.value - b.value);
   } else {
