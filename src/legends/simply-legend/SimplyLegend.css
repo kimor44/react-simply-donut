@@ -1,0 +1,7 @@
+.simply-legend-list {
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

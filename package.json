@@ -15,6 +15,11 @@
       "require": "./dist/donuts/react-simply-donut.cjs.js",
       "types": "./dist/donuts/index.d.ts"
     },
+    "./legends": {
+      "import": "./dist/legends/react-simply-donut.es.js",
+      "require": "./dist/legends/react-simply-donut.cjs.js",
+      "types": "./dist/legends/index.d.ts"
+    },
     ".": {
       "import": "./dist/react-simply-donut.es.js",
       "require": "./dist/react-simply-donut.cjs.js",

@@ -11,6 +11,7 @@ export default defineConfig({
     lib: {
       entry: {
         donuts: resolve(__dirname, "src/donuts"),
+        legends: resolve(__dirname, "src/legends"),
         "": resolve(__dirname, "src/index.ts"),
       },
       name: "react-simply-donut",
