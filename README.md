@@ -11,7 +11,8 @@ Easily integrate delightful and lightweight donut charts into your React applica
 - [Installation](#installation-🏗)
 - [Usage](#usage-✏)
 - [License](#license-©)
-<div style="text-align: center;">
+
+<div align="center">
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
