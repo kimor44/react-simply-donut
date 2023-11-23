@@ -1,11 +1,16 @@
-# React-simply-donut
-
 <p align="center"><img src="https://github.com/kimor44/react-simply-donut/blob/main/src/assets/img/react-simply-donut-logo-transparent.png"></p>
 
 Easily integrate delightful and lightweight donut charts into your React applications with "React Simply Donut." This simple-to-use package provides a hassle-free way to add visually appealing donut charts to your projects.
 
 <p align="center"><img src="https://github.com/kimor44/react-simply-donut/blob/main/src/assets/img/donut-example.png"></p>
 
+## Table of content
+
+- [Table of content](#table-of-content-📓)
+- [Why](#why)
+- [Installation](#installation-🏗)
+- [Usage](#usage-✏)
+- [License](#license-©)
 <div style="text-align: center;">
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
