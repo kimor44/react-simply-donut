@@ -1,31 +1,68 @@
-# react-simply-donut
+# React-simply-donut
 
-A React donut with just HTML and CSS
+<p align="center"><img src="https://github.com/kimor44/react-simply-donut/blob/main/src/assets/img/react-simply-donut-logo-transparent.png"></p>
 
-# React + TypeScript + Vite
+Easily integrate delightful and lightweight donut charts into your React applications with "React Simply Donut." This simple-to-use package provides a hassle-free way to add visually appealing donut charts to your projects.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center"><img src="https://github.com/kimor44/react-simply-donut/blob/main/src/assets/img/donut-example.png"></p>
 
-Currently, two official plugins are available:
+<div style="text-align: center;">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-## Expanding the ESLint configuration
+</div>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Why
 
-- Configure the top-level `parserOptions` property like this:
+I had difficulty integrating a simple donut into an application. Therefore, I created one myself – simple and lightweight – and finally shared it.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Installation 🏗
+
+Install react-simply-donut with npm, run:
+
+```bash
+npm install --save react-simply-donut
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage ✏
+
+Here is a minimal example of using the package:
+
+```tsx
+import React from "react";
+import { SimplyDonut } from "react-simply-donut/donuts";
+import { SimplyLegend } from "react-simply-donut/legends";
+
+const data = [
+  {
+    value: 123,
+    name: "value1",
+  },
+  {
+    value: 97,
+    name: "value2",
+  },
+  {
+    value: 265,
+    name: "value3",
+  },
+];
+
+const DonutAndLegend = () => {
+  return (
+    <div>
+      <div>
+        <SimplyDonut data={data} />
+      </div>
+      <div>
+        <h3>Legend title</h3>
+        <SimplyLegend data={data} />
+      </div>
+    </div>
+  );
+};
+```
+
+## License ©
+
+[MIT](https://choosealicense.com/licenses/mit/) © [Kimor44](https://github.com/kimor44)
