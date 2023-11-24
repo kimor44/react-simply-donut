@@ -10,11 +10,17 @@ Easily integrate delightful and lightweight donut charts into your React applica
 - [Why](#why)
 - [Installation](#installation-🏗)
 - [Usage](#usage-✏)
+- [API](#api-🔗)
+  - [SimplyDonut](#simplydonut)
+  - [SimplyLegend](#simplylegend)
 - [License](#license-©)
 
 <div align="center">
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+![npm](https://img.shields.io/npm/v/react-simply-donut?color=red&cacheSeconds=3600)
+![npm package minimized gzipped size (select exports)](https://img.shields.io/bundlejs/size/react-simply-donut?label=minified%20size&color=yellow)
+![npm](https://img.shields.io/npm/dm/react-simply-donut?color=purple&cacheSeconds=3600)
 
 </div>
 
@@ -28,6 +34,12 @@ Install react-simply-donut with npm, run:
 
 ```bash
 npm install --save react-simply-donut
+```
+
+or if you prefer, you can use yarn:
+
+```bash
+yarn add react-simply-donut
 ```
 
 ## Usage ✏
@@ -67,6 +79,41 @@ const DonutAndLegend = () => {
     </div>
   );
 };
+```
+
+## API 🔗
+
+#### SimplyDonut
+
+This is the main component of the package
+
+```tsx
+export type TDonutData = {
+  name: string; // donut section name
+  value: number; // donut section value
+  color?: string; // donut section color in hexadecimal format
+};
+
+export type TSimplyDonut = {
+  data: TDonutData[]; // data given for the entire donut chart
+  size?: "sm" | "md" | "lg"; // size of the donut chart
+  inset?: {
+    color?: string; // Color of the inner dot in hexadecimal format
+    size?: number; // donut thickness in percentage (between 5 and 45)
+  };
+};
+
+const SimplyDonut = (props: TSimplyDonut) => {};
+```
+
+#### SimplyLegend
+
+```tsx
+export type TSimplyLegend = {
+  data: TDonutData[]; // data given for the entire donut chart (see SimplyDonut for more details)
+};
+
+const SimplyLegend = (props: TSimplyLegend) => {};
 ```
 
 ## License ©
