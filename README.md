@@ -31,7 +31,7 @@ I had difficulty integrating a simple donut into an application. Therefore, I cr
 
 ## Demo 💥
 
-You can play with the demo [here](https://vercel.com/kimor44s-projects/react-simply-donut-example)
+You can play with the demo [here](https://react-simply-donut-example.vercel.app/)
 
 ## Installation 🏗
 
