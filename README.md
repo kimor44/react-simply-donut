@@ -8,6 +8,7 @@ Easily integrate delightful and lightweight donut charts into your React applica
 
 - [Table of content](#table-of-content-📓)
 - [Why](#why)
+- [Demo](#demo-💥)
 - [Installation](#installation-🏗)
 - [Usage](#usage-✏)
 - [API](#api-🔗)
@@ -28,12 +29,16 @@ Easily integrate delightful and lightweight donut charts into your React applica
 
 I had difficulty integrating a simple donut into an application. Therefore, I created one myself – simple and lightweight – and finally shared it.
 
+## Demo 💥
+
+You can play with the demo [here](https://vercel.com/kimor44s-projects/react-simply-donut-example)
+
 ## Installation 🏗
 
 Install react-simply-donut with npm, run:
 
 ```bash
-npm install --save react-simply-donut
+npm i react-simply-donut
 ```
 
 or if you prefer, you can use yarn:

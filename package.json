@@ -2,7 +2,7 @@
   "name": "react-simply-donut",
   "author": "Kimor44",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple and customizable donut chart for React",
   "keywords": [
     "react",
@@ -16,7 +16,7 @@
     "lightweight",
     "typescript"
   ],
-  "homepage": "https://github.com/kimor44/react-simply-donut",
+  "homepage": "https://vercel.com/kimor44s-projects/react-simply-donut-example",
   "type": "module",
   "files": [
     "dist"
