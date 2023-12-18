@@ -1,10 +1,7 @@
-import { TDonutData, TSimplyDonut, TDataForDonut } from "./types";
-import { convertToPercent, convertToDegrees } from "../../services/convertors";
+import { TDonutData, TSimplyDonut } from "./types";
 import { isValidSize, isHexaFormat } from "../../services/validators";
-import { getColor, sortData, calculateTotalValue } from "../../services/utils";
+import { useUtils } from "../../services/use_utils.ts";
 import {
-  INITIAL_DEGREE,
-  COLORS,
   DEFAULT_INSET_COLOR,
   DEFAULT_INSET_SIZE,
 } from "../../services/constants";
@@ -12,57 +9,7 @@ import { Donut } from "../donut/Donut";
 import { TDonut } from "../donut/types";
 import { clsx } from "clsx";
 import "./SimplyDonut.css";
-
-const calculDegreesForDonut = (donutData: TDonutData[]) => {
-  const clonedDonutData: TDonutData[] = [...donutData];
-  const total = calculateTotalValue(clonedDonutData);
-  let i = 0;
-
-  return clonedDonutData.reduce(
-    (dataForDonut: TDataForDonut[], current: TDonutData, index: number) => {
-      const lastEntry = index - 1;
-      const currentPercentage = convertToPercent(current.value, total);
-      const currrentDegrees = convertToDegrees(currentPercentage);
-      const startDegrees = dataForDonut[lastEntry]?.end || INITIAL_DEGREE;
-      const endDegrees = startDegrees + currrentDegrees;
-      if (i > COLORS.length - 1) {
-        i = 0;
-      }
-      const color = getColor(i, current.color);
-      i++;
-
-      dataForDonut.push({
-        name: current.name,
-        color: color,
-        start: startDegrees,
-        end: endDegrees,
-      });
-
-      return dataForDonut;
-    },
-    []
-  );
-};
-
-const convertDegreesForDonutDataToString = (
-  degreesForDonut: TDataForDonut[]
-) => {
-  const degreesDataConvertedToString = degreesForDonut
-    .map((degreeForDonut) => {
-      const { color, start, end } = degreeForDonut;
-      return `${color} ${start}deg ${end}deg`;
-    })
-    .join(",");
-
-  return degreesDataConvertedToString;
-};
-
-const formatingDonutData = (donutData: TDonutData[]): string => {
-  const sortedData = sortData([...donutData], "desc");
-  const degreesForDonut = calculDegreesForDonut(sortedData);
-
-  return convertDegreesForDonutDataToString(degreesForDonut);
-};
+import { usePreparDataForChart } from "../../services/use_prepare_data_for_chart.tsx";
 
 const setInsetSize = (size: number): string => {
   if (isValidSize(size)) {
@@ -94,7 +41,15 @@ const SimplyDonut: React.FC<TSimplyDonut> = ({
   size,
   inset,
 }: TSimplyDonut) => {
-  const convertedDonutDataToStringDegrees = formatingDonutData(data);
+  const { sortData } = useUtils();
+  const { calculDegreesForDonut, convertDegreesForDonutDataToString } =
+    usePreparDataForChart();
+  const sortedData: TDonutData[] = sortData([...data], "desc");
+  const degreesForDonut = calculDegreesForDonut(sortedData);
+
+  const convertedDonutDataToStringDegrees =
+    convertDegreesForDonutDataToString(degreesForDonut);
+
   const backgroundStyles = {
     background: `conic-gradient(${convertedDonutDataToStringDegrees})`,
   };

@@ -1,11 +1,13 @@
 import { TDonutData } from "../../donuts/simply-donut/types";
 import { COLORS } from "../../services/constants";
-import { getColor, sortData } from "../../services/utils";
+import { useUtils } from "../../services/use_utils";
 import { TSimplyLegend } from "./types";
 import "./SimplyLegend.css";
 import { LegendItem } from "../legend-item/LegendItem";
 
 const SimplyLegend: React.FC<TSimplyLegend> = ({ data }: TSimplyLegend) => {
+  const { getColor, sortData } = useUtils();
+
   const formatingData = (data: TDonutData[]) => {
     const sortedData = sortData([...data], "desc");
     let i = 0;
