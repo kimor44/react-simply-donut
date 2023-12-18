@@ -1,10 +1,12 @@
 import { TDataForDonut, TDonutData } from "../donuts/simply-donut/types";
 import { COLORS, INITIAL_DEGREE } from "./constants";
-import { convertToDegrees, convertToPercent } from "./convertors";
+import { useConvertors } from "./use_convertors";
 import { useUtils } from "./use_utils";
 
 export const usePreparDataForChart = () => {
+  const { convertToPercent, convertToDegrees } = useConvertors();
   const { getColor, calculateTotalValue } = useUtils();
+
   const calculDegreesForDonut = (donutData: TDonutData[]): TDataForDonut[] => {
     const clonedDonutData: TDonutData[] = [...donutData];
     const total = calculateTotalValue(clonedDonutData);
