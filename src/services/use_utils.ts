@@ -1,8 +1,9 @@
-import { isHexaFormat } from "./validators";
+import { useValidators } from "./use_validators";
 import { COLORS } from "./constants";
 import { TDonutData } from "../donuts/simply-donut/types";
 
 export const useUtils = () => {
+  const { isHexaFormat } = useValidators();
   const getColor = (index: number, color?: string): string => {
     return color && isHexaFormat(color) ? color : COLORS[index];
   };
