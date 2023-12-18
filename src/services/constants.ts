@@ -1,3 +1,5 @@
+export const TOTAL_DEGREES = 360;
+export const TOTAL_PERCENTAGE = 100;
 export const INITIAL_DEGREE = 0;
 export const DEFAULT_INSET_SIZE = "12%";
 export const DEFAULT_INSET_COLOR = "#cbd5e1";

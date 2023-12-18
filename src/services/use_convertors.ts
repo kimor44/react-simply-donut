@@ -1,7 +1,6 @@
-export const useConvertors = () => {
-  const TOTAL_DEGREES = 360;
-  const TOTAL_PERCENTAGE = 100;
+import { TOTAL_PERCENTAGE, TOTAL_DEGREES } from "./constants";
 
+export const useConvertors = () => {
   const convertToPercent = (value: number, total: number) =>
     Math.round((value / total) * TOTAL_PERCENTAGE);
 
