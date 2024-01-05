@@ -13,6 +13,7 @@ Easily integrate delightful and lightweight donut charts into your React applica
 - [Usage](#usage-✏)
 - [API](#api-🔗)
   - [SimplyDonut](#simplydonut)
+  - [SimplyPie](#simplypie)
   - [SimplyLegend](#simplylegend)
 - [License](#license-©)
 
@@ -109,6 +110,23 @@ export type TSimplyDonut = {
 };
 
 const SimplyDonut = (props: TSimplyDonut) => {};
+```
+
+#### SimplyPie
+
+> Note that is the same component than SimplyDonut without the `inset` props.
+
+```tsx
+export TSimplyPie = Pick<TSimplyDonut, "data" | "size">;
+
+// TSimplyPie type is equal to :
+export type TSimplyDonut = {
+  data: TDonutData[]; // data given for the entire pie chart
+  size?: "sm" | "md" | "lg"; // size of the pie chart
+};
+
+
+const SimplyPie = (props: TSimplyPie) => {};
 ```
 
 #### SimplyLegend
