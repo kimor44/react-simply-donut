@@ -1,2 +1,2 @@
-export { SimplyDonut } from "./donuts/simply-donut/SimplyDonut";
+export { SimplyDonut, SimplyPie } from "./donuts";
 export { SimplyLegend } from "./legends/simply-legend/SimplyLegend";

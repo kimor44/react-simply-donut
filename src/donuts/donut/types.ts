@@ -1,6 +1,6 @@
 export type TDonut = {
   background: { background: string };
-  inset: {
+  inset?: {
     "--inset-color": string;
     "--inset-size": string;
   };
