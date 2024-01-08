@@ -27,7 +27,7 @@ const SimplyPie: React.FC<TSimplyPie> = ({ data, size }: TSimplyPie) => {
 
   return (
     <section className={donutWrapperStyles}>
-      <Donut background={backgroundStyles} />
+      <Donut className="simply-pie" background={backgroundStyles} />
     </section>
   );
 };

@@ -35,7 +35,11 @@ const SimplyDonut: React.FC<TSimplyDonut> = ({
 
   return (
     <section className={donutWrapperStyles}>
-      <Donut background={backgroundStyles} inset={insetProps} />
+      <Donut
+        className="simply-donut"
+        background={backgroundStyles}
+        inset={insetProps}
+      />
     </section>
   );
 };
