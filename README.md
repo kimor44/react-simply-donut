@@ -112,6 +112,8 @@ export type TSimplyDonut = {
 const SimplyDonut = (props: TSimplyDonut) => {};
 ```
 
+> 🚨 If the `size` property is not provided, the chart will extend to the boundaries of the parent block. To do this, the parent block must have a defined width and height, otherwise the graphic will not appear or will be completely flat.
+
 #### SimplyPie
 
 > Note that is the same component than SimplyDonut without the `inset` props.
@@ -122,7 +124,7 @@ export TSimplyPie = Pick<TSimplyDonut, "data" | "size">;
 // TSimplyPie type is equal to :
 export type TSimplyDonut = {
   data: TDonutData[]; // data given for the entire pie chart
-  size?: "sm" | "md" | "lg"; // size of the pie chart
+  size?: "sm" | "md" | "lg"; // size of the pie chart. If not provided, look at the warning above.
 };
 
 
