@@ -2,7 +2,7 @@
   "name": "react-simply-donut",
   "author": "Kimor44",
   "private": false,
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A simple and customizable donut chart for React",
   "keywords": [
     "react",
