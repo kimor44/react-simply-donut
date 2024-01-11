@@ -1,22 +1,21 @@
 import { TDonutData, TSimplyDonut } from "./types";
-import { useUtils } from "../../services/use_utils.ts";
 import { Donut } from "../donut/Donut";
 import { clsx } from "clsx";
 import "./SimplyDonut.css";
 import { usePreparDataForChart } from "../../services/use_prepare_data_for_chart.ts";
 import { useInsetProps } from "../../services/use_inset_props.ts";
+import { sortChartData } from "../../lib/utils/chart/sortChartData.ts";
 
 const SimplyDonut: React.FC<TSimplyDonut> = ({
   data,
   size,
   inset,
 }: TSimplyDonut) => {
-  const { sortData } = useUtils();
   const { calculDegreesForDonut, convertDegreesForDonutDataToString } =
     usePreparDataForChart();
   const getInsetProps = useInsetProps();
 
-  const sortedData: TDonutData[] = sortData([...data], "desc");
+  const sortedData: TDonutData[] = sortChartData([...data], "desc");
   const degreesForDonut = calculDegreesForDonut(sortedData);
   const convertedDonutDataToStringDegrees =
     convertDegreesForDonutDataToString(degreesForDonut);

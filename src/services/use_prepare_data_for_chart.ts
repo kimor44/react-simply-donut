@@ -1,15 +1,14 @@
 import { TDataForDonut, TDonutData } from "../donuts/simply-donut/types";
+import { getTotalChartValue } from "../lib/utils/chart/getTotalChartValue";
+import { getColor } from "../lib/utils/color/getColor";
 import { getDegrees } from "../lib/utils/number/getDegrees";
 import { getPercentage } from "../lib/utils/number/getPercentage";
 import { COLORS, MIN_DEGREE } from "./constants";
-import { useUtils } from "./use_utils";
 
 export const usePreparDataForChart = () => {
-  const { getColor, calculateTotalValue } = useUtils();
-
   const calculDegreesForDonut = (donutData: TDonutData[]): TDataForDonut[] => {
     const clonedDonutData: TDonutData[] = [...donutData];
-    const total = calculateTotalValue(clonedDonutData);
+    const total = getTotalChartValue(clonedDonutData);
     let i = 0;
 
     return clonedDonutData.reduce(

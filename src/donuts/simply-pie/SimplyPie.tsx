@@ -1,15 +1,14 @@
 import { clsx } from "clsx";
 import { usePreparDataForChart } from "../../services/use_prepare_data_for_chart";
-import { useUtils } from "../../services/use_utils";
 import { TSimplyPie } from "./types";
 import { Donut } from "../donut/Donut";
+import { sortChartData } from "../../lib/utils/chart/sortChartData";
 
 const SimplyPie: React.FC<TSimplyPie> = ({ data, size }: TSimplyPie) => {
-  const { sortData } = useUtils();
   const { calculDegreesForDonut, convertDegreesForDonutDataToString } =
     usePreparDataForChart();
 
-  const sortedData = sortData([...data], "desc");
+  const sortedData = sortChartData([...data], "desc");
   const degreesForPie = calculDegreesForDonut(sortedData);
   const convertedPieDataToStringDegrees =
     convertDegreesForDonutDataToString(degreesForPie);
