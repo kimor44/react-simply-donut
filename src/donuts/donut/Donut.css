@@ -1,8 +1,12 @@
 :root {
   --donut-border: solid 1px #f8fafc;
+  --sm-progress-font-size: 1.5em;
+  --md-progress-font-size: 2em;
+  --lg-progress-font-size: 2.5em;
 }
 .simply-donut,
-.simply-pie {
+.simply-pie,
+.simply-circle-progress-bar {
   width: 100%;
   height: 100%;
   position: relative;
@@ -10,11 +14,35 @@
   border: var(--donut-border);
   box-shadow: 0px 2px 8px 5px rgba(99, 99, 99, 0.2);
 }
-.simply-donut::before {
+.simply-donut::before,
+.simply-circle-progress-bar::before {
   content: "";
   position: absolute;
   inset: var(--inset-size);
   background-color: var(--inset-color);
   border-radius: 50%;
   border: var(--donut-border);
+}
+
+.display-score.simply-circle-progress-bar::after {
+  content: attr(data-progress) " %";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-wrap: nowrap;
+  font-family: "Roboto", sans-serif;
+}
+
+.display-score.simply-circle-progress-bar.sm-progress::after {
+  font-size: var(--sm-progress-font-size);
+}
+
+.display-score.simply-circle-progress-bar.md-progress::after {
+  font-size: var(--md-progress-font-size);
+}
+
+.display-score.simply-circle-progress-bar.lg-progress::after {
+  font-size: var(--lg-progress-font-size);
 }

@@ -1,5 +1,5 @@
 import { TDataForDonut, TDonutData } from "../donuts/simply-donut/types";
-import { COLORS, INITIAL_DEGREE } from "./constants";
+import { COLORS, MIN_DEGREE } from "./constants";
 import { useConvertors } from "./use_convertors";
 import { useUtils } from "./use_utils";
 
@@ -17,7 +17,7 @@ export const usePreparDataForChart = () => {
         const lastEntry = index - 1;
         const currentPercentage = convertToPercent(current.value, total);
         const currrentDegrees = convertToDegrees(currentPercentage);
-        const startDegrees = dataForDonut[lastEntry]?.end || INITIAL_DEGREE;
+        const startDegrees = dataForDonut[lastEntry]?.end || MIN_DEGREE;
         const endDegrees = startDegrees + currrentDegrees;
         if (i > COLORS.length - 1) {
           i = 0;

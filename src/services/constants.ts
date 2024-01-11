@@ -1,6 +1,7 @@
-export const TOTAL_DEGREES = 360;
-export const TOTAL_PERCENTAGE = 100;
-export const INITIAL_DEGREE = 0;
+export const MAX_DEGREES = 360;
+export const MAX_PERCENTAGE = 100;
+export const MIN_DEGREE = 0;
+export const MIN_PERCENTAGE = 0;
 export const DEFAULT_INSET_SIZE = "12%";
 export const DEFAULT_INSET_COLOR = "#cbd5e1";
 export const MINIMAL_INSET = 5;

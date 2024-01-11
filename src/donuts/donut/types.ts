@@ -1,8 +1,9 @@
 export type TDonut = {
   background: { background: string };
-  className: "simply-donut" | "simply-pie";
+  className: string;
   inset?: {
     "--inset-color": string;
     "--inset-size": string;
   };
+  progress?: number;
 };
