@@ -1,24 +1,17 @@
-import { TDonutData, TSimplyDonut } from "./types";
+import { TSimplyDonut } from "./types";
 import { Donut } from "../donut/Donut";
 import { clsx } from "clsx";
 import "./SimplyDonut.css";
-import { sortChartData } from "../../lib/chart/sortChartData.ts";
-import { getDegreesFromChartData } from "../../lib/chart/getDegreesFromChartData.ts";
-import { getChartBackground } from "../../lib/chart/getChartBackground.ts";
-import { getInsetProps } from "../../lib/chart/getInsetProps.ts";
+import { getConicGradientBackground } from "../../lib/features/chart/getConicGradientBackground.ts";
+import { getInsetProps } from "../../lib/features/chart/getInsetProps.ts";
 
 const SimplyDonut: React.FC<TSimplyDonut> = ({
   data,
   size,
   inset,
 }: TSimplyDonut) => {
-  const sortedData: TDonutData[] = sortChartData([...data], "desc");
-  const degreesForDonut = getDegreesFromChartData(sortedData);
-  const donutBackground = getChartBackground(degreesForDonut);
+  const conicGradientBackground = getConicGradientBackground(data);
 
-  const backgroundStyles = {
-    background: `conic-gradient(${donutBackground})`,
-  };
   const donutWrapperStyles = clsx({
     ["sm-donut"]: size === "sm",
     ["md-donut"]: size === "md",
@@ -32,7 +25,7 @@ const SimplyDonut: React.FC<TSimplyDonut> = ({
     <section className={donutWrapperStyles}>
       <Donut
         className="simply-donut"
-        background={backgroundStyles}
+        background={conicGradientBackground}
         inset={insetProps}
       />
     </section>

@@ -1,18 +1,10 @@
 import { clsx } from "clsx";
 import { TSimplyPie } from "./types";
 import { Donut } from "../donut/Donut";
-import { sortChartData } from "../../lib/chart/sortChartData";
-import { getDegreesFromChartData } from "../../lib/chart/getDegreesFromChartData";
-import { getChartBackground } from "../../lib/chart/getChartBackground";
+import { getConicGradientBackground } from "../../lib/features/chart/getConicGradientBackground";
 
 const SimplyPie: React.FC<TSimplyPie> = ({ data, size }: TSimplyPie) => {
-  const sortedData = sortChartData([...data], "desc");
-  const degreesForPie = getDegreesFromChartData(sortedData);
-  const pieBackground = getChartBackground(degreesForPie);
-
-  const backgroundStyles = {
-    background: `conic-gradient(${pieBackground})`,
-  };
+  const conicGradientBackground = getConicGradientBackground(data);
 
   const donutWrapperStyles = clsx({
     ["sm-donut"]: size === "sm",
@@ -23,7 +15,7 @@ const SimplyPie: React.FC<TSimplyPie> = ({ data, size }: TSimplyPie) => {
 
   return (
     <section className={donutWrapperStyles}>
-      <Donut className="simply-pie" background={backgroundStyles} />
+      <Donut className="simply-pie" background={conicGradientBackground} />
     </section>
   );
 };
