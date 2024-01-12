@@ -1,9 +1,8 @@
 import { TSimplyDonut } from "./types";
 import { Donut } from "../donut/Donut";
-import { clsx } from "clsx";
-import "./SimplyDonut.css";
 import { getConicGradientBackground } from "../../lib/features/chart/getConicGradientBackground.ts";
 import { getInsetProps } from "../../lib/features/chart/getInsetProps.ts";
+import { ChartWrapper } from "../../shared/chart-wrapper/ChartWrapper.tsx";
 
 const SimplyDonut: React.FC<TSimplyDonut> = ({
   data,
@@ -12,23 +11,16 @@ const SimplyDonut: React.FC<TSimplyDonut> = ({
 }: TSimplyDonut) => {
   const conicGradientBackground = getConicGradientBackground(data);
 
-  const donutWrapperStyles = clsx({
-    ["sm-donut"]: size === "sm",
-    ["md-donut"]: size === "md",
-    ["lg-donut"]: size === "lg",
-    ["simply-donut-wrapper"]: true,
-  });
-
   const insetProps = getInsetProps(inset);
 
   return (
-    <section className={donutWrapperStyles}>
+    <ChartWrapper size={size}>
       <Donut
         className="simply-donut"
         background={conicGradientBackground}
         inset={insetProps}
       />
-    </section>
+    </ChartWrapper>
   );
 };
 

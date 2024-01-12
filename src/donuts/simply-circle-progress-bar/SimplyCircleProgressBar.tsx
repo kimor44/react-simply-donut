@@ -1,13 +1,13 @@
 import { clsx } from "clsx";
 import { TSimplyCircleProgressBar } from "./types";
 import { Donut } from "../donut/Donut";
-import "./SimplyCircleProgressBar.css";
 import { getColor } from "../../lib/utils/color/getColor";
 import { safeRateValue } from "../../lib/utils/number/safeRateValue";
 import { safeParseNumber } from "../../lib/utils/number/safeParsedNumber";
 import { getDegrees } from "../../lib/utils/number/getDegrees";
 import { getProgressBackground } from "../../lib/chart/getProgressBackground";
 import { getInsetProps } from "../../lib/features/chart/getInsetProps";
+import { ChartWrapper } from "../../shared/chart-wrapper/ChartWrapper";
 
 const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   progress,
@@ -30,12 +30,6 @@ const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   const backgroundStyles = {
     background: `conic-gradient(${progressBackground})`,
   };
-  const circleProgressBarWrapperStyles = clsx({
-    ["sm-donut"]: size === "sm",
-    ["md-donut"]: size === "md",
-    ["lg-donut"]: size === "lg",
-    ["simply-progress-wrapper"]: true,
-  });
 
   const progressStyles = clsx({
     ["sm-progress"]: size === "sm",
@@ -47,14 +41,14 @@ const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   const insetProps = getInsetProps(inset);
 
   return (
-    <section className={`${circleProgressBarWrapperStyles} relative`}>
+    <ChartWrapper size={size}>
       <Donut
         className={`simply-circle-progress-bar ${progressStyles}`}
         background={backgroundStyles}
         inset={insetProps}
         progress={rate}
       />
-    </section>
+    </ChartWrapper>
   );
 };
 
