@@ -14,6 +14,7 @@ Easily integrate delightful and lightweight donut charts into your React applica
 - [API](#api-🔗)
   - [SimplyDonut](#simplydonut)
   - [SimplyPie](#simplypie)
+  - [SimplyCircleProgressBar](#simplycircleprogressbar)
   - [SimplyLegend](#simplylegend)
 - [License](#license-©)
 
@@ -95,17 +96,17 @@ This is the main component of the package
 
 ```tsx
 export type TDonutData = {
-  name: string; // donut section name
-  value: number; // donut section value
-  color?: string; // donut section color in hexadecimal format
+  name: string; // Donut section name
+  value: number; // Donut section value
+  color?: string; // Donut section color in hexadecimal format
 };
 
 export type TSimplyDonut = {
-  data: TDonutData[]; // data given for the entire donut chart
-  size?: "sm" | "md" | "lg"; // size of the donut chart
+  data: TDonutData[]; // Data given for the entire donut chart
+  size?: "sm" | "md" | "lg"; // Size of the donut chart
   inset?: {
     color?: string; // Color of the inner dot in hexadecimal format
-    size?: number; // donut thickness in percentage (between 5 and 45)
+    size?: number; // Donut thickness in percentage (between 5 and 45)
   };
 };
 
@@ -121,14 +122,37 @@ const SimplyDonut = (props: TSimplyDonut) => {};
 ```tsx
 export TSimplyPie = Pick<TSimplyDonut, "data" | "size">;
 
-// TSimplyPie type is equal to :
-export type TSimplyDonut = {
-  data: TDonutData[]; // data given for the entire pie chart
-  size?: "sm" | "md" | "lg"; // size of the pie chart. If not provided, look at the warning above.
+// Pick<TSimplyDonut, "data" | "size"> type is equal to :
+{
+  data: TDonutData[]; // Data given for the entire pie chart
+  size?: "sm" | "md" | "lg"; // Size of the pie chart. If not provided, look at the warning above.
 };
 
-
 const SimplyPie = (props: TSimplyPie) => {};
+```
+
+#### SimplyCircleProgressBar
+
+This component displays a circle progress bar with your score
+
+```tsx
+export type TSimplyCircleProgressBar = Pick<TSimplyDonut, "size" | "inset"> & {
+  progress: number; // Value of the of the progress bar
+  color?: string; // Color of the progress bar in hexadecimal format
+  displayScore?: boolean; // Display the score inside the circle (default: true)
+  transparency?: boolean; // Apply a colored transparency on the remaining percentage from the given color (default: true)
+};
+
+// Pick<TSimplyDonut, "size" | "inset"> type is equal to :
+{
+  size?: "sm" | "md" | "lg"; // Size of the pie chart. If not provided, look at the warning above.
+  inset?: {
+    color?: string; // Color of the inner dot in hexadecimal format
+    size?: number; // Donut thickness in percentage (between 5 and 45)
+  };
+};
+
+const SimplyCircleProgressBar = (props: TSimplyCircleProgressBar) => {};
 ```
 
 #### SimplyLegend
