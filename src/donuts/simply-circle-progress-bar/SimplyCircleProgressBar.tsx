@@ -8,6 +8,7 @@ import { getDegrees } from "../../lib/utils/number/getDegrees";
 import { getProgressBackground } from "../../lib/chart/getProgressBackground";
 import { getInsetProps } from "../../lib/features/chart/getInsetProps";
 import { ChartWrapper } from "../../shared/chart-wrapper/ChartWrapper";
+import { LARGE_SIZE, MEDIUM_SIZE, SMALL_SIZE } from "../../lib/constants";
 
 const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   progress,
@@ -32,9 +33,9 @@ const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   };
 
   const progressStyles = clsx({
-    ["sm-progress"]: size === "sm",
-    ["md-progress"]: size === "md",
-    ["lg-progress"]: size === "lg",
+    ["sm-progress"]: size === SMALL_SIZE,
+    ["md-progress"]: size === MEDIUM_SIZE,
+    ["lg-progress"]: size === LARGE_SIZE,
     ["display-score"]: displayScore,
   });
 

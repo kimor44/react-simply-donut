@@ -6,6 +6,9 @@ export const DEFAULT_INSET_SIZE = "12%";
 export const DEFAULT_INSET_COLOR = "#cbd5e1";
 export const MINIMAL_INSET = 5;
 export const MAXIMAL_INSET = 45;
+export const SMALL_SIZE = "sm";
+export const MEDIUM_SIZE = "md";
+export const LARGE_SIZE = "lg";
 export const COLORS: string[] = [
   "#FF5733",
   "#FFBD33",
