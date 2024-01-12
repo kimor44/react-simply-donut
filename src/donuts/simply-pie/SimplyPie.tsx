@@ -1,20 +1,17 @@
 import { clsx } from "clsx";
-import { usePreparDataForChart } from "../../services/use_prepare_data_for_chart";
 import { TSimplyPie } from "./types";
 import { Donut } from "../donut/Donut";
 import { sortChartData } from "../../lib/chart/sortChartData";
+import { getDegreesFromChartData } from "../../lib/chart/getDegreesFromChartData";
+import { getChartBackground } from "../../lib/chart/getChartBackground";
 
 const SimplyPie: React.FC<TSimplyPie> = ({ data, size }: TSimplyPie) => {
-  const { calculDegreesForDonut, convertDegreesForDonutDataToString } =
-    usePreparDataForChart();
-
   const sortedData = sortChartData([...data], "desc");
-  const degreesForPie = calculDegreesForDonut(sortedData);
-  const convertedPieDataToStringDegrees =
-    convertDegreesForDonutDataToString(degreesForPie);
+  const degreesForPie = getDegreesFromChartData(sortedData);
+  const pieBackground = getChartBackground(degreesForPie);
 
   const backgroundStyles = {
-    background: `conic-gradient(${convertedPieDataToStringDegrees})`,
+    background: `conic-gradient(${pieBackground})`,
   };
 
   const donutWrapperStyles = clsx({
