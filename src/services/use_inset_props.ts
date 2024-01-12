@@ -1,14 +1,12 @@
 import { TDonut } from "../donuts/donut/types";
 import { TSimplyDonut } from "../donuts/simply-donut/types";
 import { isHexaFormat } from "../lib/utils/color/isHexaFormat";
+import { safeSizeValue } from "../lib/utils/number/safeSizeValue";
 import { DEFAULT_INSET_COLOR, DEFAULT_INSET_SIZE } from "./constants";
-import { useValidators } from "./use_validators";
 
 export const useInsetProps = () => {
-  const { isValidSize } = useValidators();
-
   const setInsetSize = (size: number): string => {
-    if (isValidSize(size)) {
+    if (safeSizeValue(size)) {
       return `${size}%`;
     }
 
