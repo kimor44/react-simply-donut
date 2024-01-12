@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { SimplyCircleProgressBar } from "./SimplyCircleProgressBar";
 
 const meta = {
-  title: "Example/SimplyCircleProgressBar",
+  title: "Charts/SimplyCircleProgressBar",
   component: SimplyCircleProgressBar,
   parameters: {
     layout: "centered",

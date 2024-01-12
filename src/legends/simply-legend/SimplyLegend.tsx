@@ -2,7 +2,7 @@ import { TDonutData } from "../../donuts/simply-donut/types";
 import { COLORS } from "../../lib/constants";
 import { TSimplyLegend } from "./types";
 import "./SimplyLegend.css";
-import { LegendItem } from "../legend-item/LegendItem";
+import { LegendItem } from "../../shared/legend-item/LegendItem";
 import { getColor } from "../../lib/utils/color/getColor";
 import { sortChartData } from "../../lib/chart/sortChartData";
 
