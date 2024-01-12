@@ -1,5 +1,5 @@
 import { TSimplyPie } from "./types";
-import { Donut } from "../donut/Donut";
+import { Donut } from "../../shared/donut/Donut";
 import { getConicGradientBackground } from "../../lib/features/chart/getConicGradientBackground";
 import { ChartWrapper } from "../../shared/chart-wrapper/ChartWrapper";
 

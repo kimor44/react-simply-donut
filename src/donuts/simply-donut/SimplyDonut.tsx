@@ -1,5 +1,5 @@
 import { TSimplyDonut } from "./types";
-import { Donut } from "../donut/Donut";
+import { Donut } from "../../shared/donut/Donut.tsx";
 import { getConicGradientBackground } from "../../lib/features/chart/getConicGradientBackground.ts";
 import { getInsetProps } from "../../lib/features/chart/getInsetProps.ts";
 import { ChartWrapper } from "../../shared/chart-wrapper/ChartWrapper.tsx";

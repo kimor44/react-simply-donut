@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { TSimplyCircleProgressBar } from "./types";
-import { Donut } from "../donut/Donut";
+import { Donut } from "../../shared/donut/Donut";
 import { getColor } from "../../lib/utils/color/getColor";
 import { safeRateValue } from "../../lib/utils/number/safeRateValue";
 import { safeParseNumber } from "../../lib/utils/number/safeParsedNumber";
