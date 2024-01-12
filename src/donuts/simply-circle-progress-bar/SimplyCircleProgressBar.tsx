@@ -1,5 +1,4 @@
 import { clsx } from "clsx";
-import { useInsetProps } from "../../services/use_inset_props";
 import { TSimplyCircleProgressBar } from "./types";
 import { Donut } from "../donut/Donut";
 import "./SimplyCircleProgressBar.css";
@@ -8,6 +7,7 @@ import { safeRateValue } from "../../lib/utils/number/safeRateValue";
 import { safeParseNumber } from "../../lib/utils/number/safeParsedNumber";
 import { getDegrees } from "../../lib/utils/number/getDegrees";
 import { getProgressBackground } from "../../lib/chart/getProgressBackground";
+import { getInsetProps } from "../../lib/chart/getInsetProps";
 
 const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   progress,
@@ -27,7 +27,6 @@ const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
     transparency
   );
 
-  const getInsetProps = useInsetProps();
   const backgroundStyles = {
     background: `conic-gradient(${progressBackground})`,
   };
