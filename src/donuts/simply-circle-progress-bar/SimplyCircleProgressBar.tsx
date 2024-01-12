@@ -7,7 +7,7 @@ import { getColor } from "../../lib/utils/color/getColor";
 import { safeRateValue } from "../../lib/utils/number/safeRateValue";
 import { safeParseNumber } from "../../lib/utils/number/safeParsedNumber";
 import { getDegrees } from "../../lib/utils/number/getDegrees";
-import { getProgressBackground } from "../../lib/utils/chart/getProgressBackground";
+import { getProgressBackground } from "../../lib/chart/getProgressBackground";
 
 const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   progress,

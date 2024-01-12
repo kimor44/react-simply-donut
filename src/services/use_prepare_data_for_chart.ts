@@ -1,5 +1,5 @@
 import { TDataForDonut, TDonutData } from "../donuts/simply-donut/types";
-import { getTotalChartValue } from "../lib/utils/chart/getTotalChartValue";
+import { getTotalChartValue } from "../lib/chart/getTotalChartValue";
 import { getColor } from "../lib/utils/color/getColor";
 import { getDegrees } from "../lib/utils/number/getDegrees";
 import { getPercentage } from "../lib/utils/number/getPercentage";

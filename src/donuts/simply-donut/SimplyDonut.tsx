@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 import "./SimplyDonut.css";
 import { usePreparDataForChart } from "../../services/use_prepare_data_for_chart.ts";
 import { useInsetProps } from "../../services/use_inset_props.ts";
-import { sortChartData } from "../../lib/utils/chart/sortChartData.ts";
+import { sortChartData } from "../../lib/chart/sortChartData.ts";
 
 const SimplyDonut: React.FC<TSimplyDonut> = ({
   data,

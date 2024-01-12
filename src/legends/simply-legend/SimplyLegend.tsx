@@ -4,7 +4,7 @@ import { TSimplyLegend } from "./types";
 import "./SimplyLegend.css";
 import { LegendItem } from "../legend-item/LegendItem";
 import { getColor } from "../../lib/utils/color/getColor";
-import { sortChartData } from "../../lib/utils/chart/sortChartData";
+import { sortChartData } from "../../lib/chart/sortChartData";
 
 const SimplyLegend: React.FC<TSimplyLegend> = ({ data }: TSimplyLegend) => {
   const formatingData = (data: TDonutData[]) => {

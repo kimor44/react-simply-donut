@@ -1,4 +1,4 @@
-import { TDonutData } from "../../../donuts/simply-donut/types";
+import { TDonutData } from "../../donuts/simply-donut/types";
 
 export const sortChartData = (
   data: TDonutData[],

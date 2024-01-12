@@ -1,4 +1,4 @@
-import { TDonutData } from "../../../donuts/simply-donut/types";
+import { TDonutData } from "../../donuts/simply-donut/types";
 
 export const getTotalChartValue = (data: TDonutData[]): number => {
   const donutsData: TDonutData[] = [...data];

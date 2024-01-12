@@ -2,7 +2,7 @@ import { clsx } from "clsx";
 import { usePreparDataForChart } from "../../services/use_prepare_data_for_chart";
 import { TSimplyPie } from "./types";
 import { Donut } from "../donut/Donut";
-import { sortChartData } from "../../lib/utils/chart/sortChartData";
+import { sortChartData } from "../../lib/chart/sortChartData";
 
 const SimplyPie: React.FC<TSimplyPie> = ({ data, size }: TSimplyPie) => {
   const { calculDegreesForDonut, convertDegreesForDonutDataToString } =

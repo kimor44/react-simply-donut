@@ -1,4 +1,4 @@
-import { getTransparencyColor } from "../color/getTransparencyColor";
+import { getTransparencyColor } from "../utils/color/getTransparencyColor";
 
 export const getProgressBackground = (
   degree: number,
