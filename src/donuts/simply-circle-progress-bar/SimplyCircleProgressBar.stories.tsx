@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { SimplyCircleProgressBar } from "./SimplyCircleProgressBar";
 
 const meta = {
@@ -7,6 +6,11 @@ const meta = {
   component: SimplyCircleProgressBar,
   parameters: {
     layout: "centered",
+  },
+  argTypes: {
+    remainingPortionOpacity: {
+      control: { type: "range", min: 0, max: 1, step: 0.1 }, // Automatically inferred when 'options' is defined
+    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof SimplyCircleProgressBar>;
@@ -24,6 +28,6 @@ export const Basic: Story = {
       size: 10,
     },
     displayScore: true,
-    transparency: true,
+    remainingPortionOpacity: 0.4,
   },
 };

@@ -140,7 +140,7 @@ export type TSimplyCircleProgressBar = Pick<TSimplyDonut, "size" | "inset"> & {
   progress: number; // Value of the of the progress bar
   color?: string; // Color of the progress bar in hexadecimal format
   displayScore?: boolean; // Display the score inside the circle (default: true)
-  transparency?: boolean; // Apply a colored transparency on the remaining percentage from the given color (default: true)
+  remainingPortionOpacity?: number; // Apply a colored opacity on the remaining percentages (between 0 and 1 - based on the given color - default: 0.5)
 };
 
 // Pick<TSimplyDonut, "size" | "inset"> type is equal to :

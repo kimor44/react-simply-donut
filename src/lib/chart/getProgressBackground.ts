@@ -1,11 +1,11 @@
-import { getTransparencyColor } from "../utils/color/getTransparencyColor";
+import { getOpacityColor } from "../utils/color/getOpacityColor";
 
 export const getProgressBackground = (
   degree: number,
   color: string,
-  transparency: boolean
+  remainingPortionOpacity: number
 ) => {
-  const transparencyColor = getTransparencyColor(color, transparency);
+  const opacityColor = getOpacityColor(color, remainingPortionOpacity);
 
-  return `${color} 0deg ${degree}deg, ${transparencyColor} ${degree}deg 360deg`;
+  return `${color} 0deg ${degree}deg, ${opacityColor} ${degree}deg 360deg`;
 };

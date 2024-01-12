@@ -4,5 +4,5 @@ export type TSimplyCircleProgressBar = Pick<TSimplyDonut, "size" | "inset"> & {
   progress: number;
   color?: string;
   displayScore?: boolean;
-  transparency?: boolean;
+  remainingPortionOpacity?: number;
 };

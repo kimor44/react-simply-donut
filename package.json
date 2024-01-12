@@ -2,7 +2,7 @@
   "name": "react-simply-donut",
   "author": "Kimor44",
   "private": false,
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A simple and customizable donut chart for React",
   "keywords": [
     "react",
@@ -14,7 +14,10 @@
     "simple",
     "customizable",
     "lightweight",
-    "typescript"
+    "typescript",
+    "progress",
+    "percentage",
+    "bar"
   ],
   "homepage": "https://react-simply-donut-example.vercel.app/",
   "type": "module",
@@ -60,6 +63,7 @@
   },
   "dependencies": {
     "clsx": "^2.0.0",
+    "hex-color-opacity": "^0.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

@@ -16,7 +16,7 @@ const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   size,
   inset,
   displayScore = true,
-  transparency = true,
+  remainingPortionOpacity = 0.5,
 }: TSimplyCircleProgressBar) => {
   const rate = safeRateValue(safeParseNumber(progress));
   const degrees = getDegrees(rate);
@@ -25,7 +25,7 @@ const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   const progressBackground = getProgressBackground(
     degrees,
     progressColor,
-    transparency
+    remainingPortionOpacity
   );
 
   const backgroundStyles = {
