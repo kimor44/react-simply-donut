@@ -1,5 +1,5 @@
 import { TDataForDonut, TDonutData } from "../../donuts/simply-donut/types";
-import { COLORS, MIN_DEGREE } from "../../services/constants";
+import { COLORS, MIN_DEGREE } from "../constants";
 import { getColor } from "../utils/color/getColor";
 import { getDegrees } from "../utils/number/getDegrees";
 import { getPercentage } from "../utils/number/getPercentage";

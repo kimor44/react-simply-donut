@@ -1,4 +1,4 @@
-import { DEFAULT_INSET_COLOR } from "../../../services/constants";
+import { DEFAULT_INSET_COLOR } from "../../constants";
 import { isHexaFormat } from "./isHexaFormat";
 
 export const getInsetColor = (color: string): string => {

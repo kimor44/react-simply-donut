@@ -1,4 +1,4 @@
-import { DEFAULT_INSET_SIZE } from "../../services/constants";
+import { DEFAULT_INSET_SIZE } from "../constants";
 import { safeSizeValue } from "../utils/number/safeSizeValue";
 
 export const getInsetSize = (size: number): string => {

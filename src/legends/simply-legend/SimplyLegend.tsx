@@ -1,5 +1,5 @@
 import { TDonutData } from "../../donuts/simply-donut/types";
-import { COLORS } from "../../services/constants";
+import { COLORS } from "../../lib/constants";
 import { TSimplyLegend } from "./types";
 import "./SimplyLegend.css";
 import { LegendItem } from "../legend-item/LegendItem";

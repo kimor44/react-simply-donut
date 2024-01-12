@@ -1,4 +1,4 @@
-import { MAX_PERCENTAGE, MIN_PERCENTAGE } from "../../../services/constants";
+import { MAX_PERCENTAGE, MIN_PERCENTAGE } from "../../constants";
 
 export const safeRateValue = (progress: number): number => {
   if (!progress) {

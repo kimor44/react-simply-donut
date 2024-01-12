@@ -1,4 +1,4 @@
-import { COLORS } from "../../../services/constants";
+import { COLORS } from "../../constants";
 import { isHexaFormat } from "./isHexaFormat";
 
 export const getColor = (index: number, color?: string): string => {
