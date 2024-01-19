@@ -138,7 +138,7 @@ This component displays a circle progress bar with your score
 ```tsx
 export type TSimplyCircleProgressBar = Pick<TSimplyDonut, "size" | "inset"> & {
   progress: number; // Value of the of the progress bar
-  color?: string; // Color of the progress bar in hexadecimal format
+  color?: string; // Color of the progress bar in hexadecimal format (default: "#FF5733")
   displayScore?: boolean; // Display the score inside the circle (default: true)
   remainingPortionOpacity?: number; // Apply a colored opacity on the remaining percentages (between 0 and 1 - based on the given color - default: 0.5)
 };

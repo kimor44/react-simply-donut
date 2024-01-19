@@ -29,3 +29,5 @@ export const COLORS: string[] = [
   "#7433FF",
   "#B533FF",
 ];
+export const [FIRST_COLOR] = COLORS;
+export const FIRST_COLOR_INDEX = 0;

@@ -8,11 +8,17 @@ import { getDegrees } from "../../lib/utils/number/getDegrees";
 import { getProgressBackground } from "../../lib/chart/getProgressBackground";
 import { getInsetProps } from "../../lib/features/chart/getInsetProps";
 import { ChartWrapper } from "../../shared/chart-wrapper/ChartWrapper";
-import { LARGE_SIZE, MEDIUM_SIZE, SMALL_SIZE } from "../../lib/constants";
+import {
+  FIRST_COLOR,
+  FIRST_COLOR_INDEX,
+  LARGE_SIZE,
+  MEDIUM_SIZE,
+  SMALL_SIZE,
+} from "../../lib/constants";
 
 const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   progress,
-  color,
+  color = FIRST_COLOR,
   size,
   inset,
   displayScore = true,
@@ -20,8 +26,8 @@ const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
 }: TSimplyCircleProgressBar) => {
   const rate = safeRateValue(safeParseNumber(progress));
   const degrees = getDegrees(rate);
-  const colorIndex = 0;
-  const progressColor = getColor(colorIndex, color);
+  const progressColor =
+    color === FIRST_COLOR ? color : getColor(FIRST_COLOR_INDEX, color);
   const progressBackground = getProgressBackground(
     degrees,
     progressColor,
