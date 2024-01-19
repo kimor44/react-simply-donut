@@ -6,5 +6,5 @@ export const getInsetSize = (size: number): string => {
     return `${size}%`;
   }
 
-  return DEFAULT_INSET_SIZE;
+  return `${DEFAULT_INSET_SIZE}%`;
 };

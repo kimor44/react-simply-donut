@@ -7,10 +7,8 @@ import { getInsetSize } from "../../chart/getInsetSize";
 export const getInsetProps = (
   inset: TSimplyDonut["inset"]
 ): TDonut["inset"] => {
-  const size =
-    inset && inset.size ? getInsetSize(inset.size) : DEFAULT_INSET_SIZE;
-  const color =
-    inset && inset.color ? getInsetColor(inset.color) : DEFAULT_INSET_COLOR;
+  const size = getInsetSize(inset?.size || DEFAULT_INSET_SIZE);
+  const color = getInsetColor(inset?.color || DEFAULT_INSET_COLOR);
 
   return { "--inset-color": color, "--inset-size": size };
 };

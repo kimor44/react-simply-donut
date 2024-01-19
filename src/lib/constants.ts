@@ -4,8 +4,12 @@ export const MIN_DEGREE = 0;
 export const MIN_PERCENTAGE = 0;
 export const MAX_OPACITY = 1;
 export const MIN_OPACITY = 0;
-export const DEFAULT_INSET_SIZE = "12%";
+export const DEFAULT_INSET_SIZE = 12;
 export const DEFAULT_INSET_COLOR = "#cbd5e1";
+export const DEFAULT_INSET = {
+  color: DEFAULT_INSET_COLOR,
+  size: DEFAULT_INSET_SIZE,
+};
 export const MINIMAL_INSET = 5;
 export const MAXIMAL_INSET = 45;
 export const SMALL_SIZE = "sm";

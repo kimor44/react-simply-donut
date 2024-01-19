@@ -105,8 +105,8 @@ export type TSimplyDonut = {
   data: TDonutData[]; // Data given for the entire donut chart
   size?: "sm" | "md" | "lg"; // Size of the donut chart
   inset?: {
-    color?: string; // Color of the inner dot in hexadecimal format
-    size?: number; // Donut thickness in percentage (between 5 and 45)
+    color?: string; // Color of the inner dot in hexadecimal format (default: "#cbd5e1")
+    size?: number; // Donut thickness in percentage (between 5 and 45) (default: 12)
   };
 };
 
@@ -147,8 +147,8 @@ export type TSimplyCircleProgressBar = Pick<TSimplyDonut, "size" | "inset"> & {
 {
   size?: "sm" | "md" | "lg"; // Size of the pie chart. If not provided, look at the warning above.
   inset?: {
-    color?: string; // Color of the inner dot in hexadecimal format
-    size?: number; // Donut thickness in percentage (between 5 and 45)
+    color?: string; // Color of the inner dot in hexadecimal format (default: "#cbd5e1")
+    size?: number; // Donut thickness in percentage (between 5 and 45) (default: 12)
   };
 };
 

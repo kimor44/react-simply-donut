@@ -9,7 +9,7 @@ const meta = {
   },
   argTypes: {
     remainingPortionOpacity: {
-      control: { type: "range", min: 0, max: 1, step: 0.1 }, // Automatically inferred when 'options' is defined
+      control: { type: "range", min: 0, max: 1, step: 0.1 },
     },
   },
   tags: ["autodocs"],
@@ -28,6 +28,6 @@ export const Basic: Story = {
       size: 10,
     },
     displayScore: true,
-    remainingPortionOpacity: 0.4,
+    remainingPortionOpacity: 0.123324,
   },
 };

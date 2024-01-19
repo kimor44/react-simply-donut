@@ -3,11 +3,12 @@ import { Donut } from "../../shared/donut/Donut.tsx";
 import { getConicGradientBackground } from "../../lib/features/chart/getConicGradientBackground.ts";
 import { getInsetProps } from "../../lib/features/chart/getInsetProps.ts";
 import { ChartWrapper } from "../../shared/chart-wrapper/ChartWrapper.tsx";
+import { DEFAULT_INSET } from "../../lib/constants.ts";
 
 const SimplyDonut: React.FC<TSimplyDonut> = ({
   data,
   size,
-  inset,
+  inset = DEFAULT_INSET,
 }: TSimplyDonut) => {
   const conicGradientBackground = getConicGradientBackground(data);
 
