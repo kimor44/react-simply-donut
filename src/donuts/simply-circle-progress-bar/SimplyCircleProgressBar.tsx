@@ -24,8 +24,8 @@ const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
   displayScore = true,
   remainingPortionOpacity = 0.5,
 }: TSimplyCircleProgressBar) => {
-  const rate = safeRateValue(safeParseNumber(progress));
-  const degrees = getDegrees(rate);
+  const score = safeRateValue(safeParseNumber(progress));
+  const degrees = getDegrees(score);
   const progressColor =
     color === FIRST_COLOR ? color : getColor(FIRST_COLOR_INDEX, color);
   const progressBackground = getProgressBackground(
@@ -53,7 +53,7 @@ const SimplyCircleProgressBar: React.FC<TSimplyCircleProgressBar> = ({
         className={`simply-circle-progress-bar ${progressStyles}`}
         background={backgroundStyles}
         inset={insetProps}
-        progress={rate}
+        progress={score}
       />
     </ChartWrapper>
   );

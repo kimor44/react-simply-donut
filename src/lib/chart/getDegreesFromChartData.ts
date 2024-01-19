@@ -10,7 +10,7 @@ export const getDegreesFromChartData = (
 ): TDataForDonut[] => {
   const clonedChartData: TDonutData[] = [...donutData];
   const total = getTotalChartValue(clonedChartData);
-  let i = 0;
+  let colorIndex = 0;
 
   return clonedChartData.reduce(
     (dataForChart: TDataForDonut[], current: TDonutData, index: number) => {
@@ -19,11 +19,11 @@ export const getDegreesFromChartData = (
       const currrentDegrees = getDegrees(currentPercentage);
       const startDegrees = dataForChart[lastEntry]?.end || MIN_DEGREE;
       const endDegrees = startDegrees + currrentDegrees;
-      if (i > COLORS.length - 1) {
-        i = 0;
+      if (colorIndex > COLORS.length - 1) {
+        colorIndex = 0;
       }
-      const color = getColor(i, current.color);
-      i++;
+      const color = getColor(colorIndex, current.color);
+      colorIndex++;
 
       dataForChart.push({
         name: current.name,
