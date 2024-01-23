@@ -160,6 +160,7 @@ const SimplyCircleProgressBar = (props: TSimplyCircleProgressBar) => {};
 ```tsx
 export type TSimplyLegend = {
   data: TDonutData[]; // data given for the entire donut chart (see SimplyDonut for more details)
+  showPercentage?: boolean; // Display the corresponding percentage next to the value (default: false)
 };
 
 const SimplyLegend = (props: TSimplyLegend) => {};
