@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { SimplyLegend } from "./SimplyLegend";
 import { getDataSet } from "../../lib/utils/mocks/charts/getDataSet";
+import React from "react";
 
 const meta = {
   title: "Legends/SimplyLegend",
@@ -24,7 +25,7 @@ export const Basic: Story = {
       <div
         style={{
           backgroundColor: "#efefef",
-          width: "10rem",
+          width: "15rem",
           padding: "1rem",
           paddingRight: "50px",
           margin: 0,

@@ -11,7 +11,9 @@ const LegendItem: React.FC<TLegendItem> = ({ item }: TLegendItem) => {
         />
         <span className="simply-legend-name">{item.name}</span>
       </p>
-      <span className="simply-legend-value">{item.value}</span>
+      <span className="simply-legend-value">
+        {item.value} ({item.percentage}%)
+      </span>
     </li>
   );
 };
