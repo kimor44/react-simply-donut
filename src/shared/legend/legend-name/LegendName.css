@@ -1,13 +1,13 @@
-.legend-name-wrapper {
+.simply-legend-name-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
 
-.legend-name-wrapper .simply-legend-color-indicator {
+.simply-legend-name-wrapper .simply-legend-color-indicator {
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
   border-radius: 50%;
 }
