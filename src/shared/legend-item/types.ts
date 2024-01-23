@@ -6,4 +6,5 @@ type TPercentage = {
 
 export type TLegendItem = {
   item: TDonutData & TPercentage;
+  showPercentage: boolean;
 };

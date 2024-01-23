@@ -19,6 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   args: {
     data: getDataSet,
+    showPercentage: true,
   },
   decorators: [
     (Story) => (
@@ -32,7 +33,6 @@ export const Basic: Story = {
           borderRadius: "0.5rem",
         }}
       >
-        {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <Story />
       </div>
     ),

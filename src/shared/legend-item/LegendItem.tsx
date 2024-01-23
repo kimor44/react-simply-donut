@@ -1,7 +1,11 @@
 import { TLegendItem } from "./types";
 import "./LegendItem.css";
+import { LegendValue } from "../legend/legend-value/LegendValue";
 
-const LegendItem: React.FC<TLegendItem> = ({ item }: TLegendItem) => {
+const LegendItem: React.FC<TLegendItem> = ({
+  item,
+  showPercentage,
+}: TLegendItem) => {
   return (
     <li className="simply-legend-item">
       <p>
@@ -11,9 +15,7 @@ const LegendItem: React.FC<TLegendItem> = ({ item }: TLegendItem) => {
         />
         <span className="simply-legend-name">{item.name}</span>
       </p>
-      <span className="simply-legend-value">
-        {item.value} ({item.percentage}%)
-      </span>
+      <LegendValue item={item} showPercentage={showPercentage} />
     </li>
   );
 };
