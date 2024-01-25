@@ -16,6 +16,7 @@ Easily integrate delightful and lightweight donut charts into your React applica
   - [SimplyPie](#simplypie)
   - [SimplyCircleProgressBar](#simplycircleprogressbar)
   - [SimplyLegend](#simplylegend)
+- [Contributing](#contributing)
 - [License](#license-©)
 
 <div align="center">
@@ -165,6 +166,10 @@ export type TSimplyLegend = {
 
 const SimplyLegend = (props: TSimplyLegend) => {};
 ```
+
+## Contributing
+
+Contributors are welcome, feel free to submit a new [pull request](https://github.com/kimor44/react-simply-donut/pulls) to help improve **react-simply-donut**.
 
 ## License ©
 
